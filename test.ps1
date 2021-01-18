@@ -4,8 +4,10 @@ $env:PSModulePath+="D:\repos\pake;"
 import-module pake
 
 $scriptBlock = { Get-PakeTargets }
+# $scriptBlock = { 'foo', 'bar' }
 
+Register-ArgumentCompleter -CommandName show-pake -ParameterName Target -ScriptBlock $scriptBlock
 
-Register-ArgumentCompleter -CommandName show-pake -ParameterName Target -ScriptBlock { Get-PakeTargets } # $scriptBlock
+# Register-ArgumentCompleter -CommandName show-pake -ParameterName Target -ScriptBlock { Get-PakeTargets } # $scriptBlock
 
 # Register-ArgumentCompleter -CommandName pake -ParameterName Target -ScriptBlock $scriptBlock

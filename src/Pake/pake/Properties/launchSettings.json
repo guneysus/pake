@@ -3,7 +3,7 @@
     "pake": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-NoLogo -Command \"Import-Module '.\\pake.dll'; $scriptBlock = { Get-PakeTargets }; Get-PakeTargets; Register-ArgumentCompleter -CommandName pake -ParameterName Target -ScriptBlock $scriptBlock; pake"
+      "commandLineArgs": "-NoLogo -Command \"Import-Module '.\\pake.dll'; $scriptBlock = { Get-PakeTargets }; Get-PakeTargets; Register-ArgumentCompleter -CommandName pake -ParameterName Target -ScriptBlock $scriptBlock; pake foo"
     }
   }
 }

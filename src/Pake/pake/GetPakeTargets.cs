@@ -8,24 +8,22 @@ namespace pake
 {
 
     [Cmdlet("Get", "PakeTargets")]
-
     public class GetPakeTargets : PSCmdlet
     {
-        protected override void BeginProcessing()
+        //[Parameter]
+        public string PakeFile { get; set; } = @".\pakefile";
+
+        protected override void ProcessRecord()
         {
 #if DEBUG
             var content = File.ReadAllText(@"..\..\..\..\..\..\pakefile.ps1");
 #else
-            var content = File.ReadAllText(@".\pakefile.ps1");
+            var content = File.ReadAllText(PakeFile);
 #endif
             var (tokens, errors) = content.parse();
             var functions = tokens.functions();
 
-            WriteObject(functions);
-        }
-        protected override void ProcessRecord()
-        {
-
+            WriteObject(functions,true);
         }
     }
 
