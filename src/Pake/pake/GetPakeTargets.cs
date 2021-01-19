@@ -11,7 +11,7 @@ namespace pake
     public class GetPakeTargets : PSCmdlet
     {
         //[Parameter]
-        public string PakeFile { get; set; } = @".\pakefile";
+        public string PakeFile { get; set; } = @".\pakefile.ps1";
 
         protected override void ProcessRecord()
         {

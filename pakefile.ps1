@@ -5,7 +5,3 @@ function foo () {
 function bar () {
 	echo bar
 }
-
-function lorem () {
-	echo lorem
-}
