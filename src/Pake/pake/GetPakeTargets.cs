@@ -18,12 +18,12 @@ namespace pake
 #if DEBUG
             var content = File.ReadAllText(@"..\..\..\..\..\..\pakefile.ps1");
 #else
-            var content = File.ReadAllText(PakeFile);
+            var content = File.ReadAllText(base.SessionState.Path.Combine(base.SessionState.Path.CurrentLocation.Path, PakeFile));
 #endif
             var (tokens, errors) = content.parse();
             var functions = tokens.functions();
 
-            WriteObject(functions,true);
+            WriteObject(functions, true);
         }
     }
 

@@ -1,7 +1,9 @@
 function foo () {	
-	echo foo
+	[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+    $_=[System.Windows.Forms.MessageBox]::Show("foo") 
 }
 
 function bar () {
-	echo bar
+	[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+    $_=[System.Windows.Forms.MessageBox]::Show("bar") 
 }
