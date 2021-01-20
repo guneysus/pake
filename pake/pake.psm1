@@ -6,7 +6,6 @@ function Invoke-Pake () {
     )
     
     . ".\pakefile.ps1"
-    echo $default
     Write-Output "Executing $($Target)"
     switch -CaseSensitive ($Target) {
         "" {
