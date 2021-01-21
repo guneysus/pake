@@ -27,4 +27,10 @@ function Invoke-Pake () {
 
 set-alias pake Invoke-Pake
 
-Register-ArgumentCompleter -CommandName Invoke-Pake -ParameterName Target -ScriptBlock { Get-PakeTargets }
+$scriptblock = {
+    param($commandName,$parameterName,$stringMatch)
+    Get-PakeTargets | Where-Object { $_ -like "$stringMatch*" }
+}
+
+
+Register-ArgumentCompleter -CommandName Invoke-Pake -ParameterName Target -ScriptBlock $scriptblock
