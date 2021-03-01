@@ -22,7 +22,7 @@ without parameter.
 ```powershell
 Import-Module PowerShellGet
 Register-PSRepository -Name "guneysu" -SourceLocation "https://www.myget.org/F/guneysu/api/v2"
-Install-Module -Name "pake" -Repository "guneysu" 
+Install-Module -Name "pake" -Repository "guneysu" -Scope CurrentUser
 ```
 
 ## TODOs
