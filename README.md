@@ -24,9 +24,11 @@ Import-Module PowerShellGet
 Register-PSRepository -Name "guneysu" -SourceLocation "https://www.myget.org/F/guneysu/api/v2"
 Install-Module -Name "pake" -Repository "guneysu" -Scope CurrentUser
 ```
-## Example `pakefile.ps`
+## Example `pakefile.ps1`
 
 ```powershell
+## pakefile.ps1
+
 $default="build";
 
 function build () {
