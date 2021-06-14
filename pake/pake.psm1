@@ -1,28 +1,31 @@
 function Invoke-Pake () {
-    [CmdletBinding()]
     param(
-        [Parameter()]
-        $Target
+        [string] $Target
     )
     
     . ".\pakefile.ps1"
-    Write-Output "Executing $($Target)"
     switch -CaseSensitive ($Target) {
         "" {
-            & $default
+            $Target=$default
             break
         }
         "default" { 
-            Write-Output "DEFAULT!"
+            $Target=$default
             break
         }
         Default {
-            & $Target
-            break
+           break
         }
     }
     
-    Write-Output "Executed $($Target)"
+    write-debug "Args: $($Args)" 
+    write-debug "Unbound Arguments: $($MyInvocation.UnboundArguments)"            
+    write-debug "Input: $($input)" 
+    write-debug "Bound Parameters: $($MyInvocation.BoundParameters)"
+
+    write-debug "Executing $($Target)"
+    invoke-expression "$Target $($MyInvocation.UnboundArguments)"    
+    write-debug "Executed $($Target)"
 }
 
 set-alias pake Invoke-Pake
