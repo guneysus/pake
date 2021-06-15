@@ -64,5 +64,5 @@ function test {
 
 - [x] default task
 - [ ] multiple virtual targets like `all`
-- [ ] passing parameters (no limitations but should test)
+- [x] passing parameters (no limitations but should test)
 
